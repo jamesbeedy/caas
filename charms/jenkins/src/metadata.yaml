@@ -1,0 +1,24 @@
+name: jenkins-k8s
+summary: Build great things at any scale 
+maintainers:
+  - Juju Developers <juju@lists.ubuntu.com>
+description: |
+  The leading open source automation server, Jenkins provides hundreds of
+  plugins to support building, deploying and automating any project.
+tags:
+  - cicd
+  - ops
+  - build
+provides:
+  http:
+    interface: http
+series:
+   - kubernetes
+resources:
+  jenkins_image:
+    type: oci-image
+    description: "Image used for jenkins pod."
+storage:
+  jenkins-home:
+    type: filesystem
+    location: /var/jenkins_home

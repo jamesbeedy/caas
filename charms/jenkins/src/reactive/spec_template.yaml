@@ -1,0 +1,16 @@
+containers:
+  - name: %(name)s
+    imageDetails:
+      imagePath: %(docker_image_path)s
+      username: %(docker_image_username)s
+      password: %(docker_image_password)s
+    securityContext:
+      fsGroup: 1000
+    ports:
+      - containerPort: 8080
+        protocol: TCP
+      - containerPort: 50000
+        protocol: TCP
+    env:
+      - name: JAVA_OPTS
+        value: -Djenkins.install.runSetupWizard=false
