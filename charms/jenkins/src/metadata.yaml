@@ -9,9 +9,6 @@ tags:
   - cicd
   - ops
   - build
-provides:
-  http:
-    interface: http
 series:
    - kubernetes
 resources:
