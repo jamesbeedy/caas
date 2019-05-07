@@ -1,0 +1,14 @@
+name: jupyter-k8s
+summary: Jupyter Notebook
+maintainers:
+  - Juju Developers <juju@lists.ubuntu.com>
+description: |
+  Jupyter Notebook
+tags:
+  - bigdata
+series:
+   - kubernetes
+resources:
+  jupyter_image:
+    type: oci-image
+    description: "Image used for jupyter pod."
