@@ -1,0 +1,6 @@
+options:
+  annotations:
+    type: string
+    default: ""
+    description: |
+      YAML string representing service annotations.

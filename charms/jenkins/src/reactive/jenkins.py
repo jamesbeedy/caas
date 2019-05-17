@@ -35,21 +35,16 @@ def make_pod_spec():
     md = metadata()
     cfg = config()
 
-    user = cfg.get('user')
-    set_flag('user', user)
-    password = cfg.get('password')
-    set_flag('password', password)
-
     image_info = layer.docker_resource.get_info('jenkins_image')
 
-    data = {
+    context = {
         'name': md.get('name'),
+        'annotations': cfg.get('annotations'),
         'docker_image_path': image_info.registry_path,
         'docker_image_username': image_info.username,
         'docker_image_password': image_info.password,
     }
-    data.update(cfg)
-    return pod_spec_template % data
+    return pod_spec_template % context
 
 
 @when('jenkins.configured')
