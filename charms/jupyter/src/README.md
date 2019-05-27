@@ -15,9 +15,7 @@ Jupyter Charm for Kubernetes
 ## Deplyment Example: NodePort
 
     $ juju deploy cs:~jamesbeedy/jupyter-k8s \
-      --config kubernetes-service-type=LoadBalancer \
-      --config juju-external-hostname="jenkins-k8s.myexamnple.com"
-
+      --config kubernetes-service-type=NodePort
 
 ## Deplyment Example: LoadBalancer
 
